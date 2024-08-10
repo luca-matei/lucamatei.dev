@@ -1,5 +1,8 @@
 import {MDXRemote} from "next-mdx-remote/rsc";
 import {Error404Page} from "@/components/Error404Page";
+import {Paragraph} from "@/app/(app-pages)/resources/[resId]/[resSlug]/Paragraph";
+
+const components = { Paragraph };
 
 export default async function ResourcePage({ params }: { params: { resId: string, resSlug: string } }) {
   const resId = params.resId;
@@ -12,5 +15,5 @@ export default async function ResourcePage({ params }: { params: { resId: string
   const data = await response.json();
   const content = data.content;
 
-  return <MDXRemote source={content} />
+  return <MDXRemote source={content} components={components} />
 }

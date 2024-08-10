@@ -13,7 +13,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import TreeView from "./TreeView";
 
 const navigation = [
-  { name: 'Home', href: '', icon: faHome, current: true },
+  { name: 'Home', href: '/', icon: faHome, current: true },
   { name: 'Resources', href: '/resources', icon: faBook, current: false },
   { name: 'Projects', href: '/projects', icon: faCode, current: false },
 ]
@@ -103,11 +103,7 @@ export default function RootLayout({
               {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
                 <div className="flex h-16 shrink-0 items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
-                  />
+                  <a href="/" className="font-semibold">lucamatei.dev</a>
                 </div>
                 <nav className="flex flex-1 flex-col">
                   <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -154,11 +150,7 @@ export default function RootLayout({
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
             <div className="flex h-16 shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="Your Company"
-              />
+              <a href="/" className="font-semibold">lucamatei.dev</a>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -192,20 +184,6 @@ export default function RootLayout({
                   <div className="text-xs font-semibold leading-6 text-gray-400">Categories</div>
                   {loadingNodes ? <LoadingNodes /> : <TreeView nodes={nodes} />}
                   {failedToFetchNodes && <FailedToFetchNodes />}
-                </li>
-                <li className="-mx-6 mt-auto">
-                  <a
-                    href="#"
-                    className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-                  >
-                    <img
-                      className="h-8 w-8 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    />
-                    <span className="sr-only">Your profile</span>
-                    <span aria-hidden="true">Tom Cook</span>
-                  </a>
                 </li>
               </ul>
             </nav>
